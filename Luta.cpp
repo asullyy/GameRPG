@@ -1,5 +1,5 @@
-#include "personagem.h"
-#include "Habilidades_Personagens.h"
+#include "Personagem.h"
+#include "Arma.h"
 #include "Luta.h"
 #include <iostream>
 #include <string>
@@ -27,9 +27,19 @@ Luta::Luta(string nomeP1, string tipoPersonagemP1, string origemP1, int forcaP1,
 }
 
 Luta::~Luta(){
-    cout<<"Objeto foi Destruido";
+    cout<<"Objeto Luta foi destruido\n";
 }
-void Luta::mostrarLuta(){
+
+void Luta::mostrarLuta(string ele, string lgr, string pais){
+    cenariopt->setElemento(ele);
+    cenariopt->setLugar(lgr);
+    cenariopt->setPais(pais);
+
+    cout<<"CENARIO DA LUTA\n";
+    cout<<"Elemento: "<<cenariopt->getElemento()<<"\n";
+    cout<<"Lugar: "<<cenariopt->getLugar()<<"\n";
+    cout<<"Pais: "<<cenariopt->getPais()<<"\n\n";
+
     cout<<"INICIANDO LUTA"<<"\n\n";
     cout<<"ROUND FORCA"<<"\n";
 
@@ -66,5 +76,4 @@ void Luta::mostrarLuta(){
     }if(numVitoriasP2>numVitoriasP1){
         cout<<p2.getNome()<<" VENCEU!"<<"\n";
     }
-
 }

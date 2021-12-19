@@ -32,7 +32,9 @@ Cenario::Cenario(const Cenario& other)
     this->lugar = other.lugar;
     this->pais = other.pais;
 }
-
+Cenario::~Cenario(){
+    cout<<"Objeto Cenario foi destruido\n";
+}
 // getters e setters
 void Cenario::setElemento(string elmt){
     this->elemento = elmt;

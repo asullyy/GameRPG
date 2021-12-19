@@ -1,4 +1,4 @@
-#include "Habilidades_Personagens.h"
+#include "Arma.h"
 #include <iostream>
 #include <string>
 
@@ -6,7 +6,7 @@ using std::string;
 
 //construtores
 
-Habilidades::Habilidades(int f, int r, int c)
+Arma::Arma(int f, int r, int c)
 {
     if (f>100){
         setForca(100);
@@ -25,7 +25,7 @@ Habilidades::Habilidades(int f, int r, int c)
     }
 }
 
-Habilidades::Habilidades()
+Arma::Arma()
 :forca(0), rapidez(0), conhecimento(0){
     if (forca>100){
         setForca(100);
@@ -45,7 +45,7 @@ Habilidades::Habilidades()
 }
 
 
-Habilidades::Habilidades(const Habilidades& other)
+Arma::Arma(const Arma& other)
 {
     this->forca = other.forca;
     this->rapidez = other.rapidez;
@@ -53,26 +53,26 @@ Habilidades::Habilidades(const Habilidades& other)
 }
 
 
-void Habilidades::setForca (int f){
+void Arma::setForca (int f){
     this->forca = f;
 }
-int Habilidades::getForca (){
+int Arma::getForca (){
     return this->forca;
 }
-void Habilidades::setRapidez (int r){
+void Arma::setRapidez (int r){
     this->rapidez = r;
 }
-int Habilidades::getRapidez (){
+int Arma::getRapidez (){
     return this->rapidez;
 }
-void Habilidades::setConhecimento (int c){
+void Arma::setConhecimento (int c){
     this->conhecimento = c;
 }
-int Habilidades::getConhecimento (){
+int Arma::getConhecimento (){
     return this->conhecimento;
 }
 
-void Habilidades::mostrarHabilidades() const{
+void Arma::mostrarHabilidades() const{
     cout<<"Forca: "<<this->forca<<"\n";
     cout<<"Rapidez: "<<this->rapidez<<"\n";
     cout<<"Conhecimento: "<<this->conhecimento<<"\n";

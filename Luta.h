@@ -4,8 +4,9 @@
 #include <iostream>
 #include <string>
 #include <stdlib.h>
-#include "Habilidades_Personagens.h"
+#include "Arma.h"
 #include "Personagem.h"
+#include "Cenario.h"
 
 using std::string;
 using std::cout;
@@ -19,9 +20,9 @@ public:
 
     //7. Usar o destructor para desalocar memória e se for o caso alterar o valor das variáveis static
     ~Luta();
-    void mostrarLuta();
+    void mostrarLuta(string, string, string);
 
-    //12. Dois métodos statics
+    //12. Dois métodos statics (usar no main)
     static int getnumVitoriasP1(){return numVitoriasP1;}
     static int getnumVitoriasP2(){return numVitoriasP2;}
 private:
@@ -35,7 +36,11 @@ private:
     //6. No mínimo duas composições (agregação)
     Personagem p1;
     Personagem p2;
-    Habilidades habP1;
-    Habilidades habP2;
+    Arma habP1;
+    Arma habP2;
+    Cenario cenario;
+
+    Cenario *cenariopt = new Cenario;
+    
 };
 #endif

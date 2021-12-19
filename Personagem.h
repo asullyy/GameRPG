@@ -4,7 +4,9 @@
 #include <iostream>
 #include <string>
 #include <stdlib.h>
-#include "Habilidades_Personagens.h"
+
+#include <vector>
+using std::vector;
 
 using std::string;
 using std::cout;
@@ -17,6 +19,9 @@ public:
     Personagem();
     Personagem(const Personagem &); //construtor de cópia
 
+    //Construtor usando vector e alocação de memória
+    Personagem(vector <string> &);
+
     void setNome(string n);
     string getNome();
     void setTipoPersonagem(string tp);
@@ -24,18 +29,16 @@ public:
     void setOrigem(string o);
     string getOrigem();
 
-    void mostrarPersonagem ();
+    void mostrarPersonagem () const;
+    void mostrarVetorPersonagem();
 
 private:
-    //9. Duas alocações de memória (São usadas no método mostrarPersonagem)
     //10. Usar string
     string nome;
-    string *ptNome = (string*) malloc(sizeof(string));
-    
     string tipoPersonagem;
-    string *ptTP = (string*) malloc(sizeof(string));
-
     string origem;
-    string *ptOrigem = (string*) malloc(sizeof(string));
+
+    //8. Usar o vector
+    vector <string> personagem;
 };
 #endif

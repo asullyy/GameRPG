@@ -15,7 +15,9 @@ public:
     Cenario(string elemento, string lugar, string pais);
     Cenario();
     Cenario(const Cenario &); //construtor de cópia
-
+    
+    ~Cenario();
+    
     void setElemento(string elmt);
     string getElemento();
     void setLugar(string lgr);

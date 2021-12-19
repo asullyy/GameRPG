@@ -1,9 +1,12 @@
 #include "personagem.h"
-#include "Habilidades_Personagens.h"
+#include "Arma.h"
 #include <iostream>
 #include <string>
 
 using std::string;
+
+#include <vector>
+using std::vector;
 
 //construtores
 Personagem::Personagem(string nome, string tipoPersonagem, string origem)
@@ -25,6 +28,14 @@ Personagem::Personagem(const Personagem& other)
     this->tipoPersonagem = other.tipoPersonagem;
     this->origem = other.origem;
 }
+
+//contrutor usando alocação e vector
+Personagem::Personagem(vector <string> &personagem){
+    this->personagem.resize(personagem.size());
+    for(int i = 0; i<personagem.size(); i++)
+        this->personagem[i] = personagem[i];
+}
+
 //setters e getters
 
 void Personagem::setNome(string n){
@@ -46,15 +57,15 @@ string Personagem::getOrigem(){
     return this->origem;
 }
 
-void Personagem::mostrarPersonagem (){
-    ptNome = &nome;
-    cout << "Nome: "<<*ptNome<<"\n";
+void Personagem::mostrarPersonagem () const{
+    cout << "Nome: "<<this->nome<<"\n";
+    cout << "Tipo de personagem: "<<this->tipoPersonagem<<"\n";
+    cout << "Nacionalidade/Origem: "<<this->origem<<"\n";
+}
 
-    ptTP = &tipoPersonagem;
-    cout << "Tipo de personagem: "<<*ptTP<<"\n";
-
-    ptOrigem = &origem;
-    cout << "Nacionalidade/Origem: "<<*ptOrigem<<"\n";
-
+void Personagem::mostrarVetorPersonagem(){
+    cout<<'\n'<<"MOSTRANDO VECTOR DE PERSONAGEM"<<"\n";
+    for (int i=0; this->personagem[i].size(); i++)
+        cout<< this->personagem[i]<<'\n';
 }
 

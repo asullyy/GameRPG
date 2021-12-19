@@ -1,5 +1,5 @@
-#ifndef HABILIDADES_PERSONAGENS_H
-#define HABILIDADES_PERSONAGENS_H
+#ifndef ARMA_H
+#define ARMA_H
 
 #include <iostream>
 #include <string>
@@ -8,13 +8,13 @@
 using std::string;
 using std::cout;
 
-class Habilidades
+class Arma
 {
 public:
     //2.Todas as classes devem ter no mínimo três construtores e um deles deve ser o de cópia
-    Habilidades(int forca, int rapidez, int conhecimento);
-    Habilidades();
-    Habilidades(const Habilidades &); //construtor de cópia
+    Arma(int forca, int rapidez, int conhecimento);
+    Arma();
+    Arma(const Arma &); //construtor de cópia
 
     void setForca (int f);
     int getForca ();
